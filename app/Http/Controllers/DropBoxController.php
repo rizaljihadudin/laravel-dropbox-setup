@@ -10,7 +10,7 @@ class DropBoxController extends Controller
 
     public function index()
     {
-        $list = Dropbox::files()->listContents('/anam');
+        $list = Dropbox::files()->listContents('/audit');
         return view('welcome', [
             'list'  => $list['entries'],
         ]);
@@ -18,7 +18,7 @@ class DropBoxController extends Controller
 
     public function upload(Request $request)
     {
-        $path = '/anam';
+        $path = '/audit';
         $file = $request->file('file');
 
         // upload file
